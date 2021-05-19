@@ -28,46 +28,63 @@ function main() {
 
   // **********************************************************
 
-  // button stuff
+  // TEAM 1 ADD button
 
   let buttonCounter = 0
 
-  let teamOneScore = document.querySelector('.team1 h3')
-
-  // TEAM 1 ADD button
-
-  function handleClickButton(event) {
-    const thingClickedOn = event.target
+  function handleClickAddition1() {
+    let teamOneScore = document.querySelector('.team1 h3')
     teamOneScore.textContent = buttonCounter++
   }
-  function addAPoint() {
-    buttonCounter++
+
+  document
+    .querySelector('.team1 .add')
+    .addEventListener('click', handleClickAddition1)
+
+  // TEAM 2 ADD button
+
+  let buttonCounter2 = 0
+
+  let teamTwoScore = document.querySelector('.team2 h3')
+
+  function handleClickAddition2() {
+    teamTwoScore.textContent = buttonCounter2++
   }
 
-  let allAddButtons = document.querySelectorAll('.team1 .add')
+  let team2AddButtons = document.querySelectorAll('.team2 .add')
 
-  allAddButtons.forEach(button =>
-    button.addEventListener('click', handleClickButton)
+  team2AddButtons.forEach(button =>
+    button.addEventListener('click', handleClickAddition2)
   )
+  //TEAM 1 SUBTRACT BUTTON
+
+  function handleClickSubtraction1() {
+    let teamOneScore = document.querySelector('.team1 h3')
+    console.log(buttonCounter)
+
+    teamOneScore.textContent = --buttonCounter
+    console.log(buttonCounter)
+  }
+
+  let team1SubtractButton = document.querySelectorAll('.team1 .subtract')
+  team1SubtractButton.forEach(button =>
+    button.addEventListener('click', handleClickSubtraction1)
+  )
+
+  //TEAM 2 SUBTRACT BUTTON
+
+  function handleClickSubtraction2() {
+    teamTwoScore.textContent = --buttonCounter2
+  }
+
+  let team2SubtractButton = document.querySelectorAll('.team2 .subtract')
+
+  team2SubtractButton.forEach(button =>
+    button.addEventListener('click', handleClickSubtraction2)
+  )
+
+  // *****************************************************************
+  // HOMEWORK PART 2
 }
-
-// TEAM 2 ADD button
-
-let buttonCounter = 0
-
-let teamTwoScore = document.querySelector('.team2 h3')
-
-function handleClickButton(event) {
-  const thingClickedOn = event.target
-  teamTwoScore.textContent = buttonCounter++
-}
-function addAPoint() {
-  buttonCounter++
-}
-let team2AddButton = document.querySelectorAll('.team2 .add')
-
-team2AddButton.forEach(button =>
-  button.addEventListener('click', handleClickButton)
-)
 
 document.addEventListener('DOMContentLoaded', main)
