@@ -1,4 +1,5 @@
 function main() {
+  //input team name boxes
   //team 1 input box//
 
   function updateTeam1Name(event) {
@@ -25,11 +26,15 @@ function main() {
     .querySelector('.team2 input')
     .addEventListener('input', updateTeam2Name)
 
+  // **********************************************************
+
+  // button stuff
+
   let buttonCounter = 0
 
-  let teamOneScore = document.querySelector('h3')
+  let teamOneScore = document.querySelector('.team1 h3')
 
-  // click + Button
+  // TEAM 1 ADD button
 
   function handleClickButton(event) {
     const thingClickedOn = event.target
@@ -39,11 +44,30 @@ function main() {
     buttonCounter++
   }
 
-  let allAddButtons = document.querySelectorAll('.add')
+  let allAddButtons = document.querySelectorAll('.team1 .add')
 
   allAddButtons.forEach(button =>
     button.addEventListener('click', handleClickButton)
   )
 }
+
+// TEAM 2 ADD button
+
+let buttonCounter = 0
+
+let teamTwoScore = document.querySelector('.team2 h3')
+
+function handleClickButton(event) {
+  const thingClickedOn = event.target
+  teamTwoScore.textContent = buttonCounter++
+}
+function addAPoint() {
+  buttonCounter++
+}
+let team2AddButton = document.querySelectorAll('.team2 .add')
+
+team2AddButton.forEach(button =>
+  button.addEventListener('click', handleClickButton)
+)
 
 document.addEventListener('DOMContentLoaded', main)
