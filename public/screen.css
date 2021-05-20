@@ -1,5 +1,6 @@
 :root {
   font: 16px / 1 sans-serif;
+  font-family: Arial;
 }
 
 html {
@@ -9,27 +10,34 @@ html {
 body {
   margin: 0;
   min-height: 100%;
-  background-color: #f1e6eb;
+  background-color: #e4ecdd;
   color: #2b303a;
 }
 
 h1 {
   text-align: center;
-  font-family: Monospace;
   margin: 1rem 0 3rem 0;
+  margin-top: 2rem;
 }
 
 main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  /* border: thin solid #7c7c7c; */
 }
 
+header {
+  background-color: rgb(235, 241, 235);
+  padding: 1rem;
+  padding-bottom: 1px;
+  border: solid rgb(170, 179, 170);
+}
 section {
   min-width: 20rem;
-  border: thin solid #7c7c7c;
+  /* border: thin solid #7c7c7c; */
   border-radius: 0.3rem;
-  margin-bottom: 3rem;
+  margin-top: 4rem;
 
   display: flex;
   flex-direction: column;
@@ -55,6 +63,8 @@ fieldset {
 
 fieldset input {
   padding: 0.5rem;
+  border-radius: 1rem;
+  border: thin solid #7c7c7c;
 }
 
 fieldset i {
@@ -67,4 +77,19 @@ fieldset i.add {
 
 fieldset i.subtract {
   color: #f64545;
+}
+button {
+  border: thin solid #7c7c7c;
+  padding: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 1rem;
+}
+button:hover {
+  background-color: #9e9e9e;
+}
+i:hover {
+  background-color: rgb(162, 170, 162);
+  border-radius: 1rem;
+  font-size: 35px;
 }
